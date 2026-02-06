@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends git \
 ARG VITE_PUBLIC_APP_URL
 ENV VITE_PUBLIC_APP_URL=${VITE_PUBLIC_APP_URL}
 
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates git \
+  && rm -rf /var/lib/apt/lists/*
+
 # Install deps efficiently
 COPY package.json pnpm-lock.yaml* ./
 RUN pnpm fetch
