@@ -77,7 +77,7 @@ project, please check the [project management guide](./PROJECT.md) to get starte
 - **Revert code to earlier versions** for easier debugging and quicker changes.
 - **Download projects as ZIP** for easy portability and sync to a folder on the host.
 - **Integration-ready Docker support** for a hassle-free setup.
-- **Deploy directly** to **Netlify**, **Vercel**, or **GitHub Pages**.
+- **Deploy directly** to **Coolify**, **Netlify**, **Vercel**, or **GitHub Pages**.
 - **Electron desktop app** for native desktop experience.
 - **Data visualization and analysis** with integrated charts and graphs.
 - **Git integration** with clone, import, and deployment capabilities.
@@ -226,6 +226,35 @@ For users who prefer a native desktop experience, bolt.diy is also available as 
 
 The desktop app provides the same full functionality as the web version with additional native features.
 
+### Option 4: Deploy to Coolify
+
+For easy cloud deployment, bolt.diy can be deployed to any Coolify instance with just a few clicks:
+
+[![Deploy on Coolify](https://img.shields.io/badge/Deploy%20on-Coolify-6B46C1?style=for-the-badge&logo=docker&logoColor=white)](https://coolify.io)
+
+**Quick Start:**
+1. Add a new resource in your Coolify dashboard
+2. Point to this repository: `https://github.com/Marduc666/bolt.diy-Coolify`
+3. Select branch: `stable` (recommended) or `main`
+4. Configure your AI provider API keys in environment variables
+5. Deploy!
+
+**📖 See [COOLIFY_DEPLOYMENT.md](COOLIFY_DEPLOYMENT.md) for complete deployment instructions**, including:
+- Step-by-step setup guide
+- Environment variable configuration
+- Health checks and monitoring
+- Troubleshooting tips
+- Resource requirements
+- Custom domain setup
+
+**Minimum Requirements:**
+- 2GB RAM, 2 CPU cores
+- At least one AI provider API key (OpenAI, Anthropic, Groq, etc.)
+
+**Recommended for Production:**
+- 4GB RAM, 4 CPU cores
+- Multiple AI provider configurations for redundancy
+
 ## Configuring API Keys and Providers
 
 Bolt.diy features a modern, intuitive settings interface for managing AI providers and API keys. The settings are organized into dedicated panels for easy navigation and configuration.
@@ -372,7 +401,7 @@ This method is recommended for developers who want to:
 1. **Clone the Repository**:
 
    ```bash
-   git clone -b stable https://github.com/stackblitz-labs/bolt.diy.git
+   git clone -b stable https://github.com/Marduc666/bolt.diy-Coolify.git
    ```
 
 2. **Navigate to Project Directory**:

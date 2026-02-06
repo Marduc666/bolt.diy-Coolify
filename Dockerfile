@@ -50,9 +50,21 @@ ARG DEFAULT_NUM_CTX
 
 # Set non-sensitive environment variables
 ENV WRANGLER_SEND_METRICS=false \
-    VITE_LOG_LEVEL=${VITE_LOG_LEVEL} \
-    DEFAULT_NUM_CTX=${DEFAULT_NUM_CTX} \
-    RUNNING_IN_DOCKER=true
+  VITE_LOG_LEVEL=${VITE_LOG_LEVEL} \
+  DEFAULT_NUM_CTX=${DEFAULT_NUM_CTX} \
+  RUNNING_IN_DOCKER=true
+
+# Coolify-specific labels for better integration
+LABEL org.opencontainers.image.title="bolt.diy"
+LABEL org.opencontainers.image.description="AI-powered full-stack web development in the browser"
+LABEL org.opencontainers.image.vendor="bolt.diy team"
+LABEL org.opencontainers.image.url="https://bolt.diy"
+LABEL org.opencontainers.image.documentation="https://stackblitz-labs.github.io/bolt.diy/"
+LABEL org.opencontainers.image.source="https://github.com/stackblitz-labs/bolt.diy"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL coolify.managed="true"
+LABEL coolify.type="application"
+LABEL coolify.port="5173"
 
 # Note: API keys should be provided at runtime via docker run -e or docker-compose
 # Example: docker run -e OPENAI_API_KEY=your_key_here ...
@@ -69,7 +81,7 @@ COPY --from=prod-deps /app/bindings.sh /app/bindings.sh
 
 # Pre-configure wrangler to disable metrics
 RUN mkdir -p /root/.config/.wrangler && \
-    echo '{"enabled":false}' > /root/.config/.wrangler/metrics.json
+  echo '{"enabled":false}' > /root/.config/.wrangler/metrics.json
 
 # Make bindings script executable
 RUN chmod +x /app/bindings.sh
@@ -93,8 +105,8 @@ ARG DEFAULT_NUM_CTX
 
 # Set non-sensitive environment variables for development
 ENV VITE_LOG_LEVEL=${VITE_LOG_LEVEL} \
-    DEFAULT_NUM_CTX=${DEFAULT_NUM_CTX} \
-    RUNNING_IN_DOCKER=true
+  DEFAULT_NUM_CTX=${DEFAULT_NUM_CTX} \
+  RUNNING_IN_DOCKER=true
 
 # Note: API keys should be provided at runtime via docker run -e or docker-compose
 # Example: docker run -e OPENAI_API_KEY=your_key_here ...
