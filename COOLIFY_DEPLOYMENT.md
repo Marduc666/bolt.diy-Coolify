@@ -413,7 +413,7 @@ Enable caching for better performance:
 For high traffic:
 1. Increase resources (CPU/Memory)
 2. Consider horizontal scaling (multiple instances)
-3. Use a load balancer (Coolify Pro feature)
+3. Use a load balancer
 
 ## Monitoring
 
